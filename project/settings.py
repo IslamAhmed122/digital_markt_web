@@ -40,13 +40,16 @@ INSTALLED_APPS = [
     "app",
     'crispy_forms',
      'phone_field',
+     'django_summernote',
 ]
-
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+SUMMERNOTE_THEME = 'bs4' 
 CRISPY_TEMPLATE_PACK = 'uni_form'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -122,6 +125,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, "static","staticroot"),
 if DEBUG:
  STATICFILES_DIRS = [
 os.path.join(BASE_DIR, "static")
@@ -148,3 +152,6 @@ EMAIL_HOST_USER="islem754@gmail.com"
 EMAIL_HOST_PASSWORD="If@01001043234"
 EMAIL_USE_TLS=True
 EMAIL_PORT="587"
+
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
