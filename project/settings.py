@@ -8,7 +8,9 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
+
 """
+import django_heroku
 import os
 from pathlib import Path
 
@@ -125,13 +127,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, "static","staticroot"),
+STATIC_ROOT = os.path.join(BASE_DIR, "static","staticroot")
 if DEBUG:
  STATICFILES_DIRS = [
 os.path.join(BASE_DIR, "static")
  ]
 else:
- STATIC_ROOT = os.path.join(BASE_DIR, "static")
+ STATIC_ROOT = os.path.join(BASE_DIR, "static","staticroot"),
 
 MEDIA_ROOT = os.path.join(BASE_DIR,"media")
 MEDIA_URL = '/media/'
@@ -155,3 +157,4 @@ EMAIL_PORT="587"
 
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+django_heroku.settings(locals())
