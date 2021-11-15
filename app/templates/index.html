@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+{% load static %}
+{% load crispy_forms_tags %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>{{web.title}}</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
+  <meta property="og:site_name" content="" /> <!-- website name -->
+  <meta property="og:site" content="" /> <!-- website link -->
+  <meta property="og:title" content="" /> <!-- title shown in the actual shared post -->
+  <meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+  <meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+  <meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+  <meta property="og:type" content="article" />
+
+
+  <!-- Favicons -->
+  <link href="{{web.icon.url}}" rel="icon">
+  <link href="{{web.logo.url}}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static  "assets/vendor/animate.css/animate.min.css"%}" rel="stylesheet">
+  <link href="{% static   "assets/vendor/bootstrap/css/bootstrap.min.css"%}" rel="stylesheet">
+  <link href="{% static  "assets/vendor/bootstrap-icons/bootstrap-icons.css"%}" rel="stylesheet">
+  <link href="{% static "assets/vendor/boxicons/css/boxicons.min.css"%}" rel="stylesheet">
+  <link href="{% static "assets/vendor/glightbox/css/glightbox.min.css"%}" rel="stylesheet">
+  <link href="{% static "assets/vendor/swiper/swiper-bundle.min.css"%}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static "assets/css/style.css"%}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Groovin - v4.6.0
+  * Template URL: https://bootstrapmade.com/groovin-free-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><img src="{{web.logo.url}}" alt="Medigo by templatemo"><a href="index.html">{{web.title}}</a>
+      </h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#services">Services</a></li>
+          <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
+          <li><a class="nav-link scrollto" href="#team">Team</a></li>
+         
+
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="getstarted scrollto" href="#contact">Get Started</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container">
+      <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+        <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+        <div class="carousel-inner" role="listbox">
+
+          <!-- Slide 1 -->
+
+          <div>
+            {% for imagelist in webimage  %}
+            <div class="carousel-item {% if forloop.counter0 ==  0%} active {% endif %}"
+              style="background: url({{imagelist.image.url}});">
+              <div class="carousel-container">
+                <div class="carousel-content">
+                  <h2 class="animate__animated animate__fadeInDown">{{imagelist.name}}</h2>
+                  <p class="animate__animated animate__fadeInUp">{{imagelist.description}}</p>
+
+
+                </div>
+
+
+              </div>
+
+            </div>
+            {% endfor %}
+          </div>
+
+
+
+        </div>
+
+        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+        </a>
+
+        <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+        </a>
+
+      </div>
+    </div>
+  </section><!-- End Hero -->
+  <section>
+    <main id="main">
+
+      <div class="panel-heading">
+        <h3 class="text-center"> About US .... </h3>
+      </div>
+  </section>
+  <!-- ======= About Section ======= -->
+  <section id="about">
+    <style>
+      about.image {
+        background-size: 100% 100%;
+
+
+      }
+    </style>
+    <div id="image" style="background-image:url({{about.imageone.url}});" id="about" class="about">
+
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+
+
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+              <div class="about-box">
+
+
+
+
+
+
+              </div>
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <div class="about-box">
+                  <div class="titlepage">
+                    <h2>{{about.title}}</h2>
+                    <span>{{about.description}}</span>
+                    <div class="read-more">
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- End About Section -->
+  </section>
+  <!-- ======= Counts Section ======= -->
+  <section id="counts" class="counts">
+    <div class="container">
+
+      <div class="row no-gutters">
+
+        <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+          <div class="count-box">
+            <i class="bi bi-emoji-smile"></i>
+            <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1"
+              class="purecounter"></span>
+            <p><strong>Happy Clients</strong> consequuntur quae</p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+          <div class="count-box">
+            <i class="bi bi-journal-richtext"></i>
+            <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1"
+              class="purecounter"></span>
+            <p><strong>Projects</strong> adipisci atque cum quia aut</p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+          <div class="count-box">
+            <i class="bi bi-headset"></i>
+            <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1"
+              class="purecounter"></span>
+            <p><strong>Hours Of Support</strong> aut commodi quaerat</p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+          <div class="count-box">
+            <i class="bi bi-people"></i>
+            <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1"
+              class="purecounter"></span>
+            <p><strong>Hard Workers</strong> rerum asperiores dolor</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section><!-- End Counts Section -->
+
+  <!-- ======= Clients Section ======= -->
+  <!-- End Clients Section -->
+
+  <!-- ======= Services Section ======= -->
+  <section id="services" class="services">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Services</h2>
+        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
+          consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit
+          in iste officiis commodi quidem hic quas.</p>
+      </div>
+
+      <div class="row">
+        {% for Service in service %}
+        <div class="col-lg-4 col-md-6 icon-box">
+
+          <div class="icon"><i class="bi bi-briefcase"></i></div>
+          <h4 class="title"><a href="">{{Service.title}}</a></h4>
+
+          <p>{{Service.descriptionservice}}</p>
+
+        </div>
+        {% endfor %}
+
+      </div>
+
+
+    </div>
+
+  </section><!-- End Services Section -->
+
+  <!-- ======= Why Us Section ======= -->
+  <section id="why-us" class="why-us">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Why Us</h2>
+        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
+          consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit
+          in iste officiis commodi quidem hic quas.</p>
+      </div>
+
+      <div class="row">
+        {% for  whychooseus in chose  %}
+        <div class="col-lg-4">
+
+          <div class="box">
+            <span>{{whychooseus.number}}</span>
+            <h4>{{whychooseus.title}}</h4>
+            <p>{{whychooseus.description}}</p>
+          </div>
+        </div>
+        {% endfor %}
+
+      </div>
+    </div>
+
+    </div>
+
+    </div>
+  </section><!-- End Why Us Section -->
+
+  <!-- ======= Portfolio Section ======= -->
+  <section id="portfolio" class="portfolio">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Portfolio</h2>
+        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
+          consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit
+          in iste officiis commodi quidem hic quas.</p>
+      </div>
+      <div class="row">
+      {% for imagelistportfolio in image %}
+      <div class="col-lg-4">
+        <div class="box">
+        
+                <span class="meta-category">{{imagelistportfolio.name}}</span>
+                <h3 class="portfolio-title">{{imagelistportfolio.description}}</a></h3>
+              </div>
+              
+          <img  class="img-fluid img-thumbnail" src="{{imagelistportfolio.image.url}}" alt="{{imagelistportfolio.alt}}">
+        </div>
+        {% endfor %}
+      </div>
+
+
+    </div>
+  </section><!-- End Portfolio Section -->
+
+  <!-- ======= Team Section ======= -->
+  <section id="team" class="team">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Team</h2>
+        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
+          consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit
+          in iste officiis commodi quidem hic quas.</p>
+      </div>
+
+      <div class="row">
+        {% for Team in  team %}
+        <div class="col-xl-3 col-lg-4 col-md-6">
+          <div class="member">
+            <img src="{{Team.image.url}}" class="img-fluid" alt="{{Team.alt}}">
+            <div class="member-info">
+              <div class="member-info-content">
+                <h4>{{Team.name}}</h4>
+                <span>{{Team.description}}</span>
+                <div class="social">
+                  <a href="{{Team.twi_link}}"><i class="bi bi-twitter"></i></a>
+                  <a href="{{Team.fac_link}}"><i class="bi bi-facebook"></i></a>
+                  <a href="{{Team.ins_link}}"><i class="bi bi-instagram"></i></a>
+                  <a href="{{Team.linked_link}}"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+             
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        
+    </div>
+  </section><!-- End Team Section -->
+
+  <!-- ======= Pricing Section ======= -->
+
+
+  <!-- End Pricing Section -->
+
+  <!-- ======= Frequently Asked Questions Section ======= -->
+  <!-- End Frequently Asked Questions Section -->
+
+  <!-- ======= Contact Section ======= -->
+  <section id="contact" class="contact">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Contact</h2>
+        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
+          consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit
+          in iste officiis commodi quidem hic quas.</p>
+      </div>
+
+      <div class="row contact-info">
+
+        <div class="col-md-4">
+          <div class="contact-address">
+            <i class="bi bi-geo-alt"></i>
+            <h3>Address</h3>
+            <address>{{contact.address}}</address>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="contact-phone">
+            <i class="bi bi-phone"></i>
+            <h3>Phone Number</h3>
+            <p><a href="tel:{{contact.phone_number}}">{{contact.phone_number}}</a></p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="contact-email">
+            <i class="bi bi-envelope"></i>
+            <h3>Email</h3>
+            <p><a href="{{contact.linkcontact}}">{{contact.gmail}}</a></p>
+          </div>
+        </div>
+
+      </div>
+      <div class="row contact-form">
+        <div class="col-md-6">
+            <iframe src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJxW4wVfhAWBQRiiksO4TpmZU&key" frameborder="0" style="border:0;"   width="600"                  allowfullscreen="auto" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+    
+      <div class="col-md-6">
+        <div id="success"></div>
+        <form method="POST" class="uniForm" novalidate="novalidate">
+          {% csrf_token %}
+          {% crispy form %}
+
+      </div>
+      </form>
+    </div>
+      </section>
+    </div>
+  </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <h3>{{web.title}}</h3>
+              <p>
+                {{contact.address}} <br>
+              <br>
+                <strong>Phone:</strong> {{footer.phone_number}}<br>
+                <strong>Email:</strong> {{contact.gmail}}<br>
+              </p>
+              <div class="social-links mt-3">
+                <a href="{{Team.twi_link}}" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="{{Team.fac_link}}" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="{{Team.ins_link}}" class="instagram"><i class="bx bxl-instagram"></i></a>
+               
+                <a href="{{Team.linked_link}}" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>{{footer.title}}</h4>
+            <p>{{footer.description}}</p>
+            <form  method="post">
+              {% csrf_token %}
+              {{form.email}}
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>IslamAhmed</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/groovin-free-bootstrap-theme/ -->
+        Designed by <a href="https://www.facebook.com/">IslamAhmed</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static "assets/vendor/bootstrap/js/bootstrap.bundle.min.js"%}"></script>
+  <script src="{% static "assets/vendor/glightbox/js/glightbox.min.js"%}"></script>
+  <script src="{% static "assets/vendor/isotope-layout/isotope.pkgd.min.js"%}"></script>
+
+  <script src="{% static "assets/vendor/purecounter/purecounter.js"%}"></script>
+  <script src="{% static "assets/vendor/swiper/swiper-bundle.min.js"%}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static "assets/js/main.js"%}"></script>
+
+</body>
+
+</html>
