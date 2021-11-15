@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 """
 
+import django_heroku
 import os
 from pathlib import Path
 
@@ -157,3 +158,4 @@ EMAIL_PORT="587"
 
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+django_heroku.settings(locals())
