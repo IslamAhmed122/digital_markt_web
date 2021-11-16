@@ -133,16 +133,16 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "static","staticroot")
-if DEBUG:
- STATICFILES_DIRS = [
-os.path.join(BASE_DIR, "static")
- ]
-else:
- STATIC_ROOT = os.path.join(BASE_DIR, "static","staticroot"),
 
-MEDIA_ROOT = os.path.join(BASE_DIR,"media")
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+    "/var/www/static/"
+ ]
+
 MEDIA_URL = '/media/'
-ADMIN_MEDIA_PREFIX = '/media/' 
+MEDIA_ROOT = os.path.join(BASE_DIR,"media")
+X_FRAME_OPTIONS="SAMEORIGIN"
+
 
 
 COMPRESS_ENABLED = True
